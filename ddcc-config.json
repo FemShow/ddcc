@@ -1,0 +1,40 @@
+{
+  "$schema": "https://purl.org/csv-cubed/qube-config/v1",
+  "title": "Driver and rider fatalities in reported collisions: percentage over the legal blood alcohol limit by vehicle type and driver age",
+  "description": "Driver and rider fatalities in reported collisions: percentage over the legal blood alcohol limit by vehicle type and driver age, Note 1; On 5 December 2014 the limit in Scotland was reduced to 50 milligrams of alcohol per 100 millilitres of blood. It remains at 80 milligrams of alcohol per 100 millilitres of blood in England and Wales. Note 2; Excludes accidents involving only pedal cyclists or horse riders",
+  "creator": "https://www.gov.uk/government/organisations/department-for-transport",
+  "publisher": "https://www.gov.uk/government/organisations/department-for-transport",
+  "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "keywords": [
+    "fatalaties",
+    "collisions",
+    "alcohol",
+    "DWI"
+  ],
+  "columns": {
+    "Collision year": {
+      "from_template": "year"
+    },
+    "Vehicle type": {
+      "type": "dimension",
+      "label": "Vehicle type"
+   },
+    "Age Group": {
+      "type": "dimension",
+      "label": "Age Group"
+   },
+    "Percentage":{
+      "type": "observations",
+      "measure": {
+        "label": "Percentage",
+        "description": "Percentage of drivers and riders over the legal blood alcohol limit by vehicle type.",
+        "from_existing": "https://purl.org/csv-cubed/resources/measures#portion"
+      },
+      "data_type": "decimal",
+      "unit": {
+        "label": "percentage",
+        "from_existing": "http://qudt.org/vocab/unit/PERCENT"
+      }
+    }
+  }
+}
